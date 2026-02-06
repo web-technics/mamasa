@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow common sensitive folders (adjust if needed)
+Disallow: /cgi-bin/
+Disallow: /BU/
+
+Sitemap: https://mamasa.site/sitemap.xml

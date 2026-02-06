@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant — Mama Sa | Mamasa Hotel and Restaurant</title>
+    <meta name="description" content="Mamasa Rooftop Restaurant — authentic Khmer cuisine with panoramic views of Kampot. Sign up for updates and reservations.">
+    <meta name="keywords" content="Kampot rooftop restaurant, rooftop dining Kampot, Khmer cuisine, authentic Cambodian food, Kampot restaurant, Mama Sa restaurant, panoramic view restaurant, mountain view dining, traditional Khmer food, Cambodian restaurant, local dishes Kampot, fish amok, lok lak, Kampot pepper cuisine, outdoor dining Cambodia, restaurant with view, best restaurant Kampot, riverside dining, Cambodia culinary experience, Southeast Asia food, rooftop bar Kampot, sunset dining, Kampot gastronomy, Kampot best food, Kampot best price, fresh food, quality ingredients, market fresh Kampot, Kampot tour">
+    <link rel="canonical" href="https://mamasa.site/restaurant.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:title" content="Mama Sa — Restaurant">
+    <meta property="og:description" content="Rooftop restaurant serving authentic Khmer cuisine.">
+    <meta property="og:url" content="https://mamasa.site/restaurant.html">
+    <meta property="og:image" content="https://mamasa.site/images/og-restaurant.jpg">
+    <meta property="og:image:secure_url" content="https://mamasa.site/images/og-restaurant.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Mama Sa restaurant interior in warm Cambodian style">
+    <meta name="twitter:image" content="https://mamasa.site/images/og-restaurant.jpg">
+    <meta name="twitter:title" content="Mama Sa — Restaurant">
+    <meta name="twitter:description" content="Rooftop restaurant serving authentic Khmer cuisine.">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- JSON-LD Restaurant -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Restaurant",
+      "name":"Mama Sa Rooftop Restaurant",
+      "url":"https://mamasa.site/restaurant.html",
+      "image":"https://mamasa.site/images/khmer-food.png",
+      "description":"Rooftop restaurant serving authentic Khmer cuisine with panoramic mountain views in Kampot, Cambodia.",
+      "servesCuisine":["Khmer", "Cambodian", "Asian"],
+      "telephone":"+855-86-582-829",
+      "priceRange":"$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kampot",
+        "addressCountry": "Cambodia"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "10.6104",
+        "longitude": "104.1781"
+      },
+      "acceptsReservations": "True",
+      "hasMenu": "https://mamasa.site/restaurant.html",
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "4.5"
+      }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="images/restaurant/frontside 1 - 1K JPEG.avif">
+
+    <!-- Styles (copied from index for consistent look) -->
+    <style>
+        :root {
+            --primary-gold: #C4A962;
+            --dark-brown: #3D2817;
+            --deep-red: #8B2C2C;
+            --cream: #FAF7F2;
+            --white: #FFFFFF;
+            --text-dark: #2C2C2C;
+            --text-light: #6B6B6B;
+            --border-light: #E5E0D8;
+        }
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color:var(--text-dark); background:var(--white); line-height:1.7; overflow-x:hidden; }
+        h1,h2,h3,h4,h5,h6 { font-family:'Cormorant Garamond', serif; font-weight:400; }
+        nav { position: fixed; top:0; width:100%; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); padding:1.2rem 7%; z-index:1000; border-bottom:1px solid var(--border-light); }
+        .nav-container{ display:flex; justify-content:space-between; align-items:center; max-width:1400px; margin:0 auto; }
+        .nav-logo{ display:flex; align-items:center; }
+        .nav-logo img{ height:50px; width:auto; display:block; }
+        .nav-menu{ list-style:none; display:flex; gap:3rem; align-items:center; }
+        .nav-menu a{ color:var(--text-dark); text-decoration:none; font-size:0.9rem; font-weight:500; letter-spacing:1px; text-transform:uppercase; }
+        .hero{ height:60vh; position:relative; display:flex; align-items:center; justify-content:center; background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), image-set(url('images/restaurant/frontside 1 - 1K JPEG.avif') type('image/avif'), url('images/restaurant/frontside 1 - 1K JPEG.webp') type('image/webp'), url('images/restaurant/frontside 1 - 1K JPEG.jpg') type('image/jpeg')) center/cover no-repeat; margin:0; padding:0; }
+        .hero-content{ color:var(--white); text-align:center; z-index:2; padding:0 2rem; }
+        .section{ padding:4rem 7%; max-width:1200px; margin:0 auto; }
+        .restaurant-showcase{ display:grid; grid-template-columns:1fr; gap:1rem; align-items:center; }
+        /* Carousel styles */
+        .carousel-title{ font-family:'Cormorant Garamond', serif; font-size:1.8rem; margin:0 0 1rem 0; color:var(--primary-gold); letter-spacing:1px; }
+        .restaurant-carousel{ position:relative; width:100%; border-radius:6px; overflow:hidden; background:#fafafa; height:60vh; }
+        .carousel-track{ display:flex; transition:transform .5s ease; will-change:transform; touch-action: pan-y; -webkit-overflow-scrolling:touch; }
+        .carousel-slide{ width:100%; flex: 0 0 100%; display:flex; align-items:center; justify-content:center; }
+        .carousel-slide img{ max-width:96%; max-height:60vh; width:auto; height:auto; object-fit:contain; display:block; margin:0 auto; border-radius:6px; }
+        .restaurant-image{ width:100%; height:auto; border-radius:6px; }
+        .carousel-control{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.92); border:none; padding:.5rem .7rem; cursor:pointer; border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,0.08); pointer-events:auto; }
+        .carousel-control.prev{ left:0.9rem; }
+        .carousel-control.next{ right:0.9rem; }
+        .carousel-dots{ position:absolute; bottom:0.7rem; left:50%; transform:translateX(-50%); display:flex; gap:.5rem; }
+        .carousel-dots button{ width:10px; height:10px; border-radius:50%; border:none; background:rgba(0,0,0,0.18); cursor:pointer; }
+        .carousel-dots button.active{ background:var(--primary-gold); }
+        /* Carousel lightbox — full page */
+        .carousel-lightbox{ position:fixed; inset:0; background:rgba(0,0,0,0.95); display:flex; align-items:center; justify-content:center; z-index:2200; opacity:0; pointer-events:none; transition:opacity .2s ease; padding:0; touch-action: auto; }
+        .carousel-lightbox.open{ opacity:1; pointer-events:auto; }
+        .carousel-lightbox img{ max-width:92%; max-height:86vh; width:auto; height:auto; object-fit:contain; border-radius:6px; box-shadow:none; opacity:0; transform:scale(.96); transition:transform .35s cubic-bezier(.2,.9,.3,1), opacity .28s ease; will-change:transform,opacity; touch-action: auto; }
+        .carousel-lightbox img.zoomed{ transform:scale(2); cursor: grab; touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-user-select: none; will-change: transform; }
+        .carousel-lightbox.open img{ opacity:1; transform:scale(1); }
+        .carousel-lightbox .open-full{ position:absolute; top:1rem; right:1rem; background:rgba(255,255,255,0.06); border:none; color:var(--white); font-size:1.05rem; cursor:pointer; padding:.35rem .5rem; border-radius:8px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.25); margin-left:.5rem; }
+        .carousel-lightbox .close{ position:absolute; top:1rem; left:1rem; right:auto; background:rgba(255,255,255,0.06); border:none; color:var(--white); font-size:1.6rem; cursor:pointer; padding:.4rem .6rem; border-radius:8px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.25); opacity:0; transform:translateY(-6px); transition:opacity .25s ease, transform .25s ease; }
+        .cl-caption{ position:absolute; bottom:1rem; left:50%; transform:translateX(-50%) translateY(6px); color:var(--white); background:rgba(0,0,0,0.45); padding:.4rem .75rem; border-radius:6px; font-size:.95rem; opacity:0; transition:opacity .25s ease, transform .25s ease; }
+        .carousel-lightbox.open .close, .carousel-lightbox.open .cl-caption{ opacity:1; transform:none; }
+        .restaurant-info .section-label{ color:var(--primary-gold); letter-spacing:3px; text-transform:uppercase; font-weight:600; margin-bottom:.75rem; }
+        .restaurant-info h3{ font-size:2.4rem; margin-bottom:1rem; }
+        .restaurant-info p{ color:var(--text-light); line-height:1.8; margin-bottom:1.5rem; }
+        .cuisine-highlights h4{ color:var(--dark-brown); margin-bottom:.75rem; }
+        .room-link{ display:inline-block; background:var(--primary-gold); color:var(--white); padding:.8rem 1.25rem; border-radius:6px; text-decoration:none; font-weight:600; }
+        footer{ background:var(--cream); padding:4rem 7% 3rem; }
+        .footer-content{ display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:4rem; max-width:1400px; margin:0 auto 2rem; padding-bottom:2rem; border-bottom:1px solid var(--border-light); }
+        .footer-brand h3{ font-size:2.5rem; }
+        .footer-brand p{ font-size:.95rem; color:var(--text-light); line-height:1.8; }
+        .footer-column h4{ font-size:1.2rem; color:var(--dark-brown); margin-bottom:1rem; font-weight:600; }
+        .footer-column ul{ list-style:none; }
+        .footer-column li{ margin-bottom:.7rem; }
+        .footer-column a{ color:var(--text-light); text-decoration:none; }
+        .footer-column a.telegram{ display:flex; align-items:center; gap:.6rem; color:var(--text-dark); text-decoration:none; }
+        .footer-column a.telegram svg{ width:18px; height:18px; flex:0 0 18px; fill:currentColor; }
+        .footer-column a.telegram:hover{ color:var(--primary-gold); }
+        .footer-column a.facebook{ display:flex; align-items:center; gap:.6rem; color:var(--text-dark); text-decoration:none; }
+        .footer-column a.facebook svg{ width:18px; height:18px; flex:0 0 18px; fill:currentColor; }
+        .footer-column a.facebook:hover{ color:#1877F2; }
+        .footer-bottom{ text-align:center; color:var(--text-light); font-size:.85rem; max-width:1400px; margin:0 auto; }
+        /* Dishes — single-image carousel + language toggle */
+        .section-label.gallery-label{ color:var(--primary-gold); letter-spacing:3px; text-transform:uppercase; font-weight:600; margin-bottom:.75rem; display:block; }
+        .menu-controls{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:1rem; }
+        .lang-toggle{ display:flex; gap:.5rem; }
+        .lang-btn{ background:transparent; border:1px solid var(--border-light); padding:.45rem .7rem; border-radius:6px; cursor:pointer; font-weight:600; color:var(--text-dark); }
+        .lang-btn.active{ background:var(--primary-gold); color:var(--white); border-color:var(--primary-gold); }
+        .menu-carousel{ position:relative; margin-top:1rem; border-radius:6px; overflow:hidden; background:#fff; height:58vh; }
+        .menu-track{ display:flex; transition:transform .45s ease; will-change:transform; touch-action: pan-y; -webkit-overflow-scrolling:touch; }
+        .menu-slide{ min-width:100%; display:flex; align-items:center; justify-content:center; padding:1rem; }
+        .menu-slide img{ max-width:96%; max-height:58vh; object-fit:contain; border-radius:6px; cursor:pointer; }
+        .menu-control{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.92); border:none; padding:0.6rem 0.8rem; cursor:pointer; border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,0.08); min-width:48px; min-height:48px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; transition:all 0.2s ease; }
+        .menu-control:hover{ background:rgba(255,255,255,1); box-shadow:0 8px 22px rgba(0,0,0,0.12); }
+        .menu-control:active{ transform:translateY(-50%) scale(0.95); }
+        .menu-control.prev{ left:0.8rem; }
+        .menu-control.next{ right:0.8rem; }
+        .menu-dots{ position:absolute; bottom:0.6rem; left:50%; transform:translateX(-50%); display:flex; gap:.5rem; }
+        .menu-dots button{ width:9px; height:9px; border-radius:50%; border:none; background:rgba(0,0,0,0.12); cursor:pointer; min-width:44px; min-height:44px; display:inline-flex; align-items:center; justify-content:center; transition:all 0.3s ease; }
+        .menu-dots button:hover{ background:rgba(0,0,0,0.25); }
+        .menu-dots button.active{ background:var(--primary-gold); width:28px; }
+        .menu-caption{ font-size:.95rem; color:var(--text-light); margin-left:auto; }
+        /* Menu lightbox (reuses carousel-lightbox animation) */
+        @media (max-width:900px){ .menu-slide img{ max-height:48vh; } .carousel-slide img{ max-height:48vh; } .restaurant-showcase{ grid-template-columns:1fr; } .hero{ height:40vh; } .nav-menu{ gap:1rem; } .footer-content{ grid-template-columns:1fr; } .restaurant-carousel{ height:50vh; } .carousel-slide img{ max-height:50vh; } .menu-carousel{ height:48vh; } }
+        @media (max-width:768px) { .restaurant-carousel{ height:45vh; } .carousel-slide img{ max-height:45vh; } .menu-carousel{ height:43vh; } .menu-slide img{ max-height:43vh; } .menu-control{ padding:0.5rem 0.7rem; font-size:1rem; min-width:44px; min-height:44px; } .carousel-control{ padding:0.5rem 0.7rem; font-size:1rem; min-width:44px; min-height:44px; } .carousel-dots button, .menu-dots button{ min-width:40px; min-height:40px; } }
+        @media (max-width:480px) { .restaurant-carousel{ height:35vh; } .carousel-slide img{ max-height:35vh; } .menu-carousel{ height:33vh; } .menu-slide img{ max-height:33vh; } .menu-control, .carousel-control{ padding:0.4rem 0.6rem; font-size:0.9rem; min-width:40px; min-height:40px; } .carousel-dots button, .menu-dots button{ min-width:36px; min-height:36px; width:7px; height:7px; } }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Mama Sa Logo">
+            </div>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu-restaurant"><span class="bar"></span></button>
+            <ul id="site-menu-restaurant" class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#rooms">Accommodations</a></li>
+                <li><a href="restaurant.html">Dining</a></li>
+                <li><a href="booking.html" style="background: var(--primary-gold); color: var(--white); padding: 0.6rem 1.5rem; border-radius: 4px;">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        (function(){
+            const btn = document.querySelector('#navbar .hamburger');
+            const menu = document.getElementById('site-menu-restaurant');
+            if(!btn || !menu) return;
+            btn.addEventListener('click', function(){
+                const open = btn.classList.toggle('active');
+                menu.classList.toggle('mobile-open');
+                menu.classList.toggle('mobile-hidden');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            // close when a link is clicked (good for single-page anchors)
+            menu.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=>{
+                if(menu.classList.contains('mobile-open')){
+                    btn.classList.remove('active');
+                    menu.classList.remove('mobile-open');
+                    menu.classList.add('mobile-hidden');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            }));
+            document.addEventListener('click', function(e){
+                if(!menu.classList.contains('mobile-open')) return;
+                if(e.target === btn || btn.contains(e.target) || menu.contains(e.target)) return;
+                btn.classList.remove('active');
+                menu.classList.remove('mobile-open');
+                menu.classList.add('mobile-hidden');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        })();
+    </script>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Rooftop Restaurant</h1>
+            <p style="margin-top:0.75rem; color:rgba(255,255,255,0.95);">A panoramic dining experience — authentic Khmer cuisine.</p>
+        </div>
+    </section>
+
+    <section id="restaurant" class="section">
+        <div class="restaurant-showcase">
+            <h2 class="carousel-title section-label gallery-label">Toproof Restaurant</h2>
+            <!-- Carousel: restaurant photos -->
+            <div class="restaurant-carousel" id="restaurantCarousel" aria-roledescription="carousel">
+                <div class="carousel-track" id="carouselTrack" tabindex="0">
+                    <!-- slides injected by script -->
+                </div>
+                <button class="carousel-control prev" id="carouselPrev" aria-label="Previous image">◀</button>
+                <button class="carousel-control next" id="carouselNext" aria-label="Next image">▶</button>
+                <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Carousel indicators"></div>
+            </div>
+            <noscript>
+                <img src="images/khmer-food.png" alt="Mama Sa Restaurant" class="restaurant-image" loading="lazy">
+            </noscript>
+
+        </div>
+
+        <!-- Carousel Lightbox (single image viewer) -->
+        <div class="carousel-lightbox" id="carouselLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+            <button class="close" id="clClose" aria-label="Close viewer">✕</button>
+            <button class="open-full" id="clOpenFull" aria-label="Open full size">⤢</button>
+            <img src="" alt="" id="clImage">
+            <div class="cl-caption" id="clCaption"></div>
+        </div>
+    </section>
+
+    <section id="local-dishes" class="section">
+        <div class="section-label gallery-label">Dishes</div>
+        <h3>Dishes — Khmer & English</h3>
+        <p style="color:var(--text-light); margin-top:.5rem;">Click any image to open the menu viewer. Use the arrows or keyboard ← → to navigate and Esc to close.</p>
+
+        <div class="menu-controls">
+            <div class="lang-toggle" role="tablist" aria-label="Menu language">
+                <button class="lang-btn active" data-lang="khmer" id="langKh" role="tab" aria-selected="true">ខ្មែរ</button>
+                <button class="lang-btn" data-lang="eng" id="langEn" role="tab" aria-selected="false">English</button>
+            </div>
+            <div class="menu-caption" id="menuCaption" aria-live="polite"></div>
+        </div>
+
+        <div class="menu-carousel" id="menuCarousel" aria-roledescription="carousel">
+            <div class="menu-track" id="menuTrack" tabindex="0"></div>
+            <button class="menu-control prev" id="menuPrev" aria-label="Previous menu image">◀</button>
+            <button class="menu-control next" id="menuNext" aria-label="Next menu image">▶</button>
+            <div class="menu-dots" id="menuDots" role="tablist" aria-label="Menu indicators"></div>
+        </div>
+
+        <!-- Menu Lightbox (single image) -->
+        <div class="menu-lightbox carousel-lightbox" id="menuLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+            <button class="close" id="menuLbClose" aria-label="Close viewer">✕</button>
+            <button class="open-full" id="menuOpenFull" aria-label="Open full size">⤢</button>
+            <img src="" alt="" id="menuLbImage">
+            <div class="cl-caption" id="menuLbCaption"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Mama Sa Logo">
+                <p>
+
+                    A retreat celebrating authentic Cambodian heritage 
+
+                    through thoughtful hospitality and cultural preservation.
+
+                    Opened in Dec/2025 on the fisher island in Kampot, Cambodia.
+
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Useful links — Kampot</h4>
+                <ul aria-label="Useful Kampot links">
+                    <li><a href="https://kampot-cambodia.com/" target="_blank" rel="noopener noreferrer">Kampot - your Kampot guide</a></li>
+                    <li><a href="https://www.kondomrei.com/" target="_blank" rel="noopener noreferrer">Discover the uncharted trails</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Bokor_National_Park" target="_blank" rel="noopener noreferrer">Bokor National Park</a></li>
+                    <li><a href="https://kampot-cambodia.com/kampot-activities/" target="_blank" rel="noopener noreferrer">Kampot Activities</a></li>
+                    <li><a href="https://www.tourismcambodia.org/" target="_blank" rel="noopener noreferrer">Cambodia Tourism info</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Reviews</h4>
+                <ul aria-label="Review sites">
+                    <li><a href="https://www.google.com/maps/place/Mama+Sa+Hotel+and+Retreat/@10.5746545,104.1722945,17z/data=!4m8!3m7!1s0x310837007f8e7d0f:0xa5e9a3c388247276!8m2!3d10.5746545!4d104.1722945!9m1!1b1!16s%2Fg%2F11xkwlhdzv?entry=ttu" target="_blank" rel="noopener noreferrer">Google Maps Reviews</a></li>
+                    <li><a href="https://www.tripadvisor.com/Profile/MamaSaKampot" target="_blank" rel="noopener noreferrer">TripAdvisor</a></li>
+                    <li><a href="https://www.facebook.com/mamasahotel/reviews" target="_blank" rel="noopener noreferrer">Facebook Reviews</a></li>
+                    <li><a href="https://www.booking.com/" target="_blank" rel="noopener noreferrer">Booking.com</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Mama Sa. Designed by <a href="https://web-technics.services/" target="_blank" rel="noopener noreferrer">Web-technics</a> with respect for Cambodian heritage.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect (same as index)
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); }
+        });
+
+        // Local Dishes Gallery / Lightbox (paired view)
+        (function(){
+            const raw = [
+                'images/Local Dishes/1a.png',
+                'images/Local Dishes/1a ENG.png',
+                'images/Local Dishes/1b.png',
+                'images/Local Dishes/1b eng.png',
+                'images/Local Dishes/2a.png',
+                'images/Local Dishes/2a eng.png',
+                'images/Local Dishes/2b.png',
+                'images/Local Dishes/2b eng.png',
+                'images/Local Dishes/3a.png',
+                'images/Local Dishes/3a eng.png',
+                'images/Local Dishes/3b.png',
+                'images/Local Dishes/3b eng.png'
+            ];
+
+            // group into pairs by base name (strip 'eng')
+            const map = new Map();
+            raw.forEach(src => {
+                const name = src.split('/').pop().replace(/\.[^.]+$/, '');
+                const isEng = /eng/i.test(name);
+                const base = name.replace(/\s*eng\s*/i, '').trim();
+                const key = base.toLowerCase();
+                if (!map.has(key)) map.set(key, { base: base, khmer: null, eng: null });
+                const entry = map.get(key);
+                if (isEng) entry.eng = src; else entry.khmer = src;
+            });
+
+            const pairs = Array.from(map.values());
+            const khmerImages = pairs.map(p => ({ src: p.khmer, caption: p.base })).filter(i=>i.src);
+            const engImages = pairs.map(p => ({ src: p.eng, caption: p.base })).filter(i=>i.src);
+
+            const track = document.getElementById('menuTrack');
+            const prevBtn = document.getElementById('menuPrev');
+            const nextBtn = document.getElementById('menuNext');
+            const dotsWrap = document.getElementById('menuDots');
+            const langKh = document.getElementById('langKh');
+            const langEn = document.getElementById('langEn');
+            const menuCaption = document.getElementById('menuCaption');
+
+            const menuLightbox = document.getElementById('menuLightbox');
+            const mlbImage = document.getElementById('menuLbImage');
+            const mlbCaption = document.getElementById('menuLbCaption');
+            const mlbClose = document.getElementById('menuLbClose');
+
+            let lang = 'khmer';
+            let images = khmerImages;
+            let idx = 0;
+            let timer = null;
+            const interval = 4200;
+
+            function createSlide(item, i){
+                const slide = document.createElement('div');
+                slide.className = 'menu-slide';
+                const base = item.src.replace(/\.[^.]+$/, '');
+                const avif = encodeURI(base + '.avif');
+                const webp = encodeURI(base + '.webp');
+                const picture = document.createElement('picture');
+                const sAvif = document.createElement('source'); sAvif.type = 'image/avif'; sAvif.srcset = avif;
+                const sWebp = document.createElement('source'); sWebp.type = 'image/webp'; sWebp.srcset = webp;
+                const img = document.createElement('img');
+                img.src = encodeURI(item.src);
+                img.alt = `${item.caption} — ${lang === 'khmer' ? 'ខ្មែរ' : 'English'}`;
+                img.loading = 'lazy';
+                // Set intrinsic dimensions for CLS reduction
+                const dimMap = {
+                    'images/Local Dishes/1a.png': {w:1024,h:724},
+                    'images/Local Dishes/1a ENG.png': {w:1024,h:724},
+                    'images/Local Dishes/1b.png': {w:1024,h:724},
+                    'images/Local Dishes/1b eng.png': {w:1024,h:724},
+                    'images/Local Dishes/2a.png': {w:1024,h:724},
+                    'images/Local Dishes/2a eng.png': {w:1024,h:724},
+                    'images/Local Dishes/2b.png': {w:1000,h:707},
+                    'images/Local Dishes/2b eng.png': {w:1000,h:707},
+                    'images/Local Dishes/3a.png': {w:1000,h:707},
+                    'images/Local Dishes/3a eng.png': {w:1000,h:707},
+                    'images/Local Dishes/3b.png': {w:1000,h:707},
+                    'images/Local Dishes/3b eng.png': {w:1000,h:707}
+                };
+                const dims = dimMap[item.src];
+                if (dims){ img.width = dims.w; img.height = dims.h; }
+                img.addEventListener('click', () => openLB(i));
+                picture.appendChild(sAvif);
+                picture.appendChild(sWebp);
+                picture.appendChild(img);
+                slide.appendChild(picture);
+                track.appendChild(slide);
+
+                const dot = document.createElement('button');
+                dot.setAttribute('aria-label', `Go to item ${i+1}`);
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            }
+
+            function render(){
+                track.innerHTML = '';
+                dotsWrap.innerHTML = '';
+                images = (lang === 'khmer') ? khmerImages : engImages;
+                if (images.length === 0){
+                    const empty = document.createElement('div');
+                    empty.className = 'menu-slide';
+                    empty.innerHTML = '<div style="padding:2rem; color:var(--text-light);">No images available for this language.</div>';
+                    track.appendChild(empty);
+                    menuCaption.textContent = '';
+                    return;
+                }
+                images.forEach((it, i) => createSlide(it, i));
+                idx = 0;
+                update();
+                startTimer();
+            }
+
+            function update(){
+                track.style.transform = `translateX(-${idx * 100}%)`;
+                Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === idx));
+                menuCaption.textContent = images[idx] ? images[idx].caption.toUpperCase() : '';
+            }
+
+            function goTo(i){ idx = i; update(); resetTimer(); }
+            function nextSlide(){ idx = (idx + 1) % images.length; update(); }
+            function prevSlide(){ idx = (idx - 1 + images.length) % images.length; update(); }
+            nextBtn.addEventListener('click', e => { e.stopPropagation(); nextSlide(); resetTimer(); });
+            prevBtn.addEventListener('click', e => { e.stopPropagation(); prevSlide(); resetTimer(); });
+
+            function startTimer(){ if (timer) clearInterval(timer); if (images.length > 1) timer = setInterval(nextSlide, interval); }
+            function resetTimer(){ startTimer(); }
+
+            const carousel = document.getElementById('menuCarousel');
+            carousel.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
+            carousel.addEventListener('mouseleave', () => startTimer());
+            carousel.addEventListener('focusin', () => { if (timer) clearInterval(timer); });
+            carousel.addEventListener('focusout', () => startTimer());
+
+            function setLang(l){
+                if (l === lang) return;
+                lang = l;
+                langKh.classList.toggle('active', lang === 'khmer'); langKh.setAttribute('aria-selected', lang === 'khmer');
+                langEn.classList.toggle('active', lang === 'eng'); langEn.setAttribute('aria-selected', lang === 'eng');
+                render();
+            }
+            langKh.addEventListener('click', () => setLang('khmer'));
+            langEn.addEventListener('click', () => setLang('eng'));
+
+            let currentOpenIndex = 0;
+            function openLB(i){
+                currentOpenIndex = i;
+                const src = images[i].src;
+                const base = src.replace(/\.[^.]+$/, '');
+                const tryAvif = encodeURI(base + '.avif');
+                const tryWebp = encodeURI(base + '.webp');
+                function showWith(url){
+                    mlbImage.src = url;
+                    mlbImage.alt = `${images[i].caption} — ${lang === 'khmer' ? 'ខ្មែរ' : 'English'}`;
+                    mlbCaption.textContent = `${images[i].caption} — ${lang === 'khmer' ? 'ខ្មែរ' : 'English'}`;
+                }
+                showWith(tryAvif);
+                menuLightbox.setAttribute('aria-hidden', 'false');
+                const show = () => { menuLightbox.classList.add('open'); mlbClose.focus(); };
+                mlbImage.addEventListener('error', function onErr(){
+                    mlbImage.removeEventListener('error', onErr);
+                    showWith(tryWebp);
+                    mlbImage.addEventListener('error', function onErr2(){
+                        mlbImage.removeEventListener('error', onErr2);
+                        showWith(encodeURI(src));
+                    });
+                });
+                mlbImage.onload = function(){ show(); mlbImage.onload = null; };
+                if (mlbImage.complete) show();
+            }
+            function closeLB(){ menuLightbox.classList.remove('open'); menuLightbox.setAttribute('aria-hidden', 'true'); mlbImage.src = ''; mlbImage.classList.remove('zoomed'); mlbImage.style.transformOrigin = ''; mlbImage.style.transform = ''; }
+
+            mlbClose.addEventListener('click', function(e){ e.stopPropagation(); closeLB(); });
+            menuLightbox.addEventListener('click', function(e){ if (e.target === menuLightbox) closeLB(); });
+
+            // --- Menu lightbox: double-tap/dblclick zoom and open-full ---
+            const menuOpenFull = document.getElementById('menuOpenFull');
+            function toggleMenuZoom(e){
+                const rect = mlbImage.getBoundingClientRect();
+                let xPct = 50, yPct = 50;
+                if (e && (e.changedTouches && e.changedTouches[0])){
+                    const cx = e.changedTouches[0].clientX, cy = e.changedTouches[0].clientY;
+                    xPct = ((cx - rect.left) / rect.width) * 100;
+                    yPct = ((cy - rect.top) / rect.height) * 100;
+                } else if (e && e.clientX){
+                    xPct = ((e.clientX - rect.left) / rect.width) * 100;
+                    yPct = ((e.clientY - rect.top) / rect.height) * 100;
+                }
+                if (mlbImage.classList.toggle('zoomed')){
+                    mlbImage.style.transformOrigin = `${xPct}% ${yPct}%`;
+                } else {
+                    mlbImage.style.transformOrigin = '';
+                    mlbImage.style.transform = '';
+                }
+            }
+            let mlbLastTap = 0;
+            mlbImage.addEventListener('touchend', function(e){ const now = Date.now(); if (now - mlbLastTap < 300){ toggleMenuZoom(e); e.preventDefault(); } mlbLastTap = now; });
+            mlbImage.addEventListener('dblclick', toggleMenuZoom);
+            if (menuOpenFull) menuOpenFull.addEventListener('click', function(e){ e.stopPropagation(); if (mlbImage.src) window.open(mlbImage.src, '_blank'); });
+
+            // --- Panning for zoomed menu images ---
+            function enablePan(img, scale=2){
+                if(img._panEnabled) return;
+                img._panEnabled = true;
+                img._tx = 0; img._ty = 0;
+                img._isPanning = false;
+                function clamp(){
+                    const container = img.parentElement.getBoundingClientRect();
+                    const imgRect = img.getBoundingClientRect();
+                    const maxX = Math.max(0, (imgRect.width - container.width) / 2);
+                    const maxY = Math.max(0, (imgRect.height - container.height) / 2);
+                    img._tx = Math.max(-maxX, Math.min(maxX, img._tx));
+                    img._ty = Math.max(-maxY, Math.min(maxY, img._ty));
+                }
+                function update(){ img.style.transform = `translate(${img._tx}px, ${img._ty}px) scale(${scale})`; }
+                function onPointerDown(e){ e.preventDefault(); img._isPanning = true; img._lastX = e.clientX; img._lastY = e.clientY; img.setPointerCapture && img.setPointerCapture(e.pointerId); img.style.cursor='grabbing'; }
+                function onPointerMove(e){ if(!img._isPanning) return; const dx = e.clientX - img._lastX; const dy = e.clientY - img._lastY; img._lastX = e.clientX; img._lastY = e.clientY; img._tx += dx; img._ty += dy; clamp(); update(); }
+                function onPointerUp(e){ if(!img._isPanning) return; img._isPanning = false; try{ img.releasePointerCapture && img.releasePointerCapture(e.pointerId); }catch(_){ } img.style.cursor='grab'; }
+                function onTouchStart(e){ if(e.touches.length===1){ img._isPanning = true; img._lastX = e.touches[0].clientX; img._lastY = e.touches[0].clientY; } }
+                function onTouchMove(e){ if(!img._isPanning) return; e.preventDefault(); const t = e.touches[0]; const dx = t.clientX - img._lastX; const dy = t.clientY - img._lastY; img._lastX = t.clientX; img._lastY = t.clientY; img._tx += dx; img._ty += dy; clamp(); update(); }
+                function onTouchEnd(e){ img._isPanning = false; }
+                img._panHandlers = { onPointerDown, onPointerMove, onPointerUp, onTouchStart, onTouchMove, onTouchEnd };
+                img.addEventListener('pointerdown', onPointerDown);
+                window.addEventListener('pointermove', onPointerMove);
+                window.addEventListener('pointerup', onPointerUp);
+                img.addEventListener('touchstart', onTouchStart, {passive:false});
+                img.addEventListener('touchmove', onTouchMove, {passive:false});
+                img.addEventListener('touchend', onTouchEnd);
+            }
+            function disablePan(img){ if(!img._panEnabled) return; img._panEnabled = false; const h = img._panHandlers || {}; img.removeEventListener('pointerdown', h.onPointerDown); window.removeEventListener('pointermove', h.onPointerMove); window.removeEventListener('pointerup', h.onPointerUp); img.removeEventListener('touchstart', h.onTouchStart); img.removeEventListener('touchmove', h.onTouchMove); img.removeEventListener('touchend', h.onTouchEnd); img._panHandlers = null; img._isPanning = false; img._tx = 0; img._ty = 0; img.style.transform = ''; img.style.cursor = ''; }
+
+            // Update toggle to enable/disable panning when zoomed
+            const origToggleMenuZoom = toggleMenuZoom;
+            toggleMenuZoom = function(e){ origToggleMenuZoom(e); if (mlbImage.classList.contains('zoomed')){ enablePan(mlbImage, 2); } else { disablePan(mlbImage); } };
+
+            // Touch / swipe for menu lightbox
+            let lbStartX = 0, lbEndX = 0, lbThresh = 40;
+            menuLightbox.addEventListener('touchstart', function(e){ lbStartX = e.touches[0].clientX; });
+            menuLightbox.addEventListener('touchmove', function(e){ lbEndX = e.touches[0].clientX; });
+            menuLightbox.addEventListener('touchend', function(e){ if (document.getElementById('menuLbImage').classList.contains('zoomed')) { lbStartX = lbEndX = 0; return; } const dx = lbEndX - lbStartX; if (Math.abs(dx) > lbThresh){ if (dx < 0) openLB((currentOpenIndex + 1) % images.length); else openLB((currentOpenIndex - 1 + images.length) % images.length); } lbStartX = lbEndX = 0; });
+
+            // Touch / swipe for menu carousel track
+            let tStartX = 0, tEndX = 0, tThresh = 40;
+            track.addEventListener('touchstart', function(e){ tStartX = e.touches[0].clientX; if (timer) clearInterval(timer); });
+            track.addEventListener('touchmove', function(e){ tEndX = e.touches[0].clientX; });
+            track.addEventListener('touchend', function(e){ const dx = tEndX - tStartX; if (Math.abs(dx) > tThresh){ if (dx < 0) nextSlide(); else prevSlide(); } startTimer(); tStartX = tEndX = 0; });
+
+            document.addEventListener('keydown', function(e){
+                if (document.activeElement === track || carousel.contains(document.activeElement)){
+                    if (e.key === 'ArrowLeft') { prevSlide(); resetTimer(); }
+                    if (e.key === 'ArrowRight') { nextSlide(); resetTimer(); }
+                }
+                if (!menuLightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLB();
+                if (e.key === 'ArrowLeft') openLB((currentOpenIndex - 1 + images.length) % images.length);
+                if (e.key === 'ArrowRight') openLB((currentOpenIndex + 1) % images.length);
+            });
+
+            // init
+            render();
+            // Recalculate on resize
+            window.addEventListener('resize', update);
+        })();
+
+        // Restaurant carousel (auto-play, controls, lightbox viewer)
+        (function(){
+            const images = [
+                'images/restaurant/frontview 2 - 1K JPEG.jpg',
+                'images/restaurant/mountainview_1 - 1K JPEG.jpg',
+                'images/restaurant/panoramic view- 1K JPEG.jpg',
+                'images/restaurant/resto panoramic_4 - 1K JPEG.jpg',
+                'images/restaurant/resto_ panoramic view 2 - 1K JPEG.jpg',
+                'images/restaurant/resto_inside- 1K JPEG.jpg',
+                'images/restaurant/resto_mountainview 2 - 1K JPEG.jpg',
+                'images/restaurant/resto_panoramic 1 - 1K JPEG.jpg'
+            ];
+
+            const track = document.getElementById('carouselTrack');
+            const prev = document.getElementById('carouselPrev');
+            const next = document.getElementById('carouselNext');
+            const dotsWrap = document.getElementById('carouselDots');
+            const lightbox = document.getElementById('carouselLightbox');
+            const clImage = document.getElementById('clImage');
+            const clCaption = document.getElementById('clCaption');
+            const clClose = document.getElementById('clClose');
+
+            let idx = 0;
+            let timer = null;
+            const interval = 4500;
+
+            function createSlide(src,i){
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                // Derive AVIF/WebP variants from original src
+                const base = src.replace(/\.[^.]+$/, '');
+                const avif = encodeURI(base + '.avif');
+                const webp = encodeURI(base + '.webp');
+                const picture = document.createElement('picture');
+                const sAvif = document.createElement('source'); sAvif.type = 'image/avif'; sAvif.srcset = avif;
+                const sWebp = document.createElement('source'); sWebp.type = 'image/webp'; sWebp.srcset = webp;
+                const img = document.createElement('img');
+                img.src = encodeURI(src); // JPEG fallback
+                img.alt = `Restaurant view ${i+1}`;
+                img.loading = 'lazy';
+                // Set intrinsic dimensions to reduce layout shift
+                const dimMap = {
+                    'images/restaurant/frontview 2 - 1K JPEG.jpg': {w:1024,h:450},
+                    'images/restaurant/mountainview_1 - 1K JPEG.jpg': {w:1024,h:450},
+                    'images/restaurant/panoramic view- 1K JPEG.jpg': {w:1024,h:450},
+                    'images/restaurant/resto panoramic_4 - 1K JPEG.jpg': {w:1024,h:450},
+                    'images/restaurant/resto_ panoramic view 2 - 1K JPEG.jpg': {w:1024,h:450},
+                    'images/restaurant/resto_inside- 1K JPEG.jpg': {w:1024,h:450},
+                    'images/restaurant/resto_mountainview 2 - 1K JPEG.jpg': {w:1024,h:450},
+                    'images/restaurant/resto_panoramic 1 - 1K JPEG.jpg': {w:1024,h:450}
+                };
+                const dims = dimMap[src];
+                if (dims){ img.width = dims.w; img.height = dims.h; }
+                img.addEventListener('click', () => openCL(i));
+                picture.appendChild(sAvif);
+                picture.appendChild(sWebp);
+                picture.appendChild(img);
+                slide.appendChild(picture);
+                track.appendChild(slide);
+
+                const dot = document.createElement('button');
+                dot.setAttribute('aria-label', `Go to slide ${i+1}`);
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            }
+
+            images.forEach((s,i)=> createSlide(s,i));
+            const dots = Array.from(dotsWrap.children);
+            function update(){
+                const slideW = document.getElementById('restaurantCarousel').clientWidth;
+                track.style.transform = `translateX(-${idx * slideW}px)`;
+                dots.forEach((d, i)=> d.classList.toggle('active', i===idx));
+            }
+            function goTo(i){ idx = i; update(); resetTimer(); }
+            function nextSlide(){ idx = (idx+1)%images.length; update(); }
+            function prevSlide(){ idx = (idx-1+images.length)%images.length; update(); }
+            next.addEventListener('click', e=>{ e.stopPropagation(); nextSlide(); resetTimer(); });
+            prev.addEventListener('click', e=>{ e.stopPropagation(); prevSlide(); resetTimer(); });
+
+            function startTimer(){ if(timer) clearInterval(timer); timer = setInterval(nextSlide, interval); }
+            function resetTimer(){ startTimer(); }
+            startTimer();
+
+            // pause on hover/focus
+            const carousel = document.getElementById('restaurantCarousel');
+            carousel.addEventListener('mouseenter', ()=> { if(timer) clearInterval(timer); });
+            carousel.addEventListener('mouseleave', ()=> startTimer());
+            carousel.addEventListener('focusin', ()=> { if(timer) clearInterval(timer); });
+            carousel.addEventListener('focusout', ()=> startTimer());
+
+            // keyboard
+            document.addEventListener('keydown', function(e){
+                if (document.activeElement === track || carousel.contains(document.activeElement)){
+                    if (e.key === 'ArrowLeft') { prevSlide(); resetTimer(); }
+                    if (e.key === 'ArrowRight') { nextSlide(); resetTimer(); }
+                }
+            });
+
+            let currentOpenIndex = 0;
+            function openCL(i){
+                currentOpenIndex = i;
+                // Prefer AVIF/WebP in lightbox, fallback to JPEG
+                const src = images[i];
+                const base = src.replace(/\.[^.]+$/, '');
+                const tryAvif = encodeURI(base + '.avif');
+                const tryWebp = encodeURI(base + '.webp');
+                // Attempt AVIF; if it errors, try WebP; else fallback
+                function showWith(url){ clImage.src = url; clImage.alt = `Restaurant view ${i+1}`; clCaption.textContent = `View ${i+1} of ${images.length}`; }
+                // Start with AVIF
+                showWith(tryAvif);
+                lightbox.setAttribute('aria-hidden','false');
+                // add class only after the image has loaded so transitions are seen
+                const show = () => { lightbox.classList.add('open'); clClose.focus(); };
+                clImage.addEventListener('error', function onErr(){
+                    clImage.removeEventListener('error', onErr);
+                    // try WebP
+                    showWith(tryWebp);
+                    clImage.addEventListener('error', function onErr2(){
+                        clImage.removeEventListener('error', onErr2);
+                        // fallback to original JPEG
+                        showWith(encodeURI(src));
+                    });
+                });
+                clImage.onload = function(){ show(); clImage.onload = null; };
+                if (clImage.complete) show();
+            }
+            function closeCL(){ lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); clImage.src=''; clImage.classList.remove('zoomed'); clImage.style.transformOrigin = ''; clImage.style.transform = ''; }
+
+            clClose.addEventListener('click', function(e){ e.stopPropagation(); closeCL(); });
+            lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeCL(); });
+
+            // --- Carousel lightbox: double-tap/dblclick zoom and open-full ---
+            const clOpenFull = document.getElementById('clOpenFull');
+            function toggleClZoom(e){
+                const rect = clImage.getBoundingClientRect();
+                let xPct = 50, yPct = 50;
+                if (e && (e.changedTouches && e.changedTouches[0])){
+                    const cx = e.changedTouches[0].clientX, cy = e.changedTouches[0].clientY;
+                    xPct = ((cx - rect.left) / rect.width) * 100;
+                    yPct = ((cy - rect.top) / rect.height) * 100;
+                } else if (e && e.clientX){
+                    xPct = ((e.clientX - rect.left) / rect.width) * 100;
+                    yPct = ((e.clientY - rect.top) / rect.height) * 100;
+                }
+                if (clImage.classList.toggle('zoomed')){
+                    clImage.style.transformOrigin = `${xPct}% ${yPct}%`;
+                } else {
+                    clImage.style.transformOrigin = '';
+                    clImage.style.transform = '';
+                }
+            }
+            let clLastTap = 0;
+            clImage.addEventListener('touchend', function(e){ const now = Date.now(); if (now - clLastTap < 300){ toggleClZoom(e); e.preventDefault(); } clLastTap = now; });
+            clImage.addEventListener('dblclick', toggleClZoom);
+            if (clOpenFull) clOpenFull.addEventListener('click', function(e){ e.stopPropagation(); if (clImage.src) window.open(clImage.src, '_blank'); });
+
+            // --- Panning for zoomed carousel images ---
+            // reuse the same enablePan/disablePan helpers above
+            const origToggleClZoom = toggleClZoom;
+            toggleClZoom = function(e){ origToggleClZoom(e); if (clImage.classList.contains('zoomed')){ enablePan(clImage, 2); } else { disablePan(clImage); } };
+
+            // ensure pan is disabled/reset on close
+            const origCloseCL = closeCL;
+            closeCL = function(){ disablePan(clImage); origCloseCL(); };
+            const origCloseLB = closeLB;
+            closeLB = function(){ disablePan(mlbImage); origCloseLB(); };
+
+            // Touch / swipe for lightbox (mobile): left/right to change image
+            let lbTouchStartX = 0, lbTouchEndX = 0, lbThreshold = 40;
+            lightbox.addEventListener('touchstart', function(e){ const t = e.touches[0]; lbTouchStartX = t.clientX; });
+            lightbox.addEventListener('touchmove', function(e){ lbTouchEndX = e.touches[0].clientX; });
+            lightbox.addEventListener('touchend', function(e){ if (document.getElementById('clImage').classList.contains('zoomed')) { lbTouchStartX = lbTouchEndX = 0; return; } const dx = lbTouchEndX - lbTouchStartX; if (Math.abs(dx) > lbThreshold) { if (dx < 0) openCL((currentOpenIndex + 1) % images.length); else openCL((currentOpenIndex - 1 + images.length) % images.length); } lbTouchStartX = lbTouchEndX = 0; });
+
+            // Touch / swipe for carousel track (mobile)
+            let carouselTouchStartX = 0, carouselTouchEndX = 0, carouselThreshold = 40;
+            track.addEventListener('touchstart', function(e){ carouselTouchStartX = e.touches[0].clientX; if (timer) clearInterval(timer); });
+            track.addEventListener('touchmove', function(e){ carouselTouchEndX = e.touches[0].clientX; });
+            track.addEventListener('touchend', function(e){ const dx = carouselTouchEndX - carouselTouchStartX; if (Math.abs(dx) > carouselThreshold) { if (dx < 0) nextSlide(); else prevSlide(); } startTimer(); carouselTouchStartX = carouselTouchEndX = 0; });
+
+            document.addEventListener('keydown', function(e){
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeCL();
+                if (e.key === 'ArrowLeft') { openCL((currentOpenIndex - 1 + images.length) % images.length); }
+                if (e.key === 'ArrowRight') { openCL((currentOpenIndex + 1) % images.length); }
+            });
+
+            // init
+            update();
+            // Recalculate on resize to keep slide alignment exact
+            window.addEventListener('resize', update);
+        })();
+
+    </script>
+</body>
+</html>

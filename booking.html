@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay — Mama Sa Hotel Kampot</title>
+    <meta name="description" content="Book your room at Mamasa Hotel in Kampot. Choose from cozy 1-bed or 2-bed rooms with optional AC. Check our special promotion package!">
+    <meta name="keywords" content="book Kampot hotel, Kampot hotel reservation, hotel booking Cambodia, Mama Sa booking, reserve room Kampot, affordable hotel Kampot, budget accommodation Cambodia, Kampot guesthouse booking, cheap hotel Kampot, hotel deals Kampot, special offers Cambodia hotel, hotel promotion Kampot, online booking Kampot, reserve hotel room, Cambodia accommodation, Kampot lodging, double room Kampot, single room Cambodia, AC room Kampot, mountain view room, book Cambodia vacation, Kampot holiday booking, Kampot best price, bed and breakfast, family friendly hotel, dog friendly hotel, Kampot tour">
+    <link rel="canonical" href="https://mamasa.site/">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Book Your Stay — Mama Sa Hotel">
+    <meta property="og:description" content="Reserve your room at Mamasa Hotel in Kampot, Cambodia.">
+    <meta property="og:url" content="https://mamasa.site/booking.html">
+    
+    <!-- Structured Data for Offers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Mama Sa Hotel",
+      "url": "https://mamasa.site/booking.html",
+      "description": "Book your stay at Mama Sa Hotel in Kampot with comfortable rooms and rooftop restaurant.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kampot",
+        "addressCountry": "Cambodia"
+      },
+      "telephone": "+855-86-582-829",
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Room Options",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "HotelRoom",
+              "name": "Standard Room",
+              "description": "Cozy room with mountain view"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-gold: #C4A962;
+            --dark-brown: #3D2817;
+            --deep-red: #8B2C2C;
+            --cream: #FAF7F2;
+            --white: #FFFFFF;
+            --text-dark: #2C2C2C;
+            --text-light: #6B6B6B;
+            --border-light: #E5E0D8;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Image Fade-In Animation */
+        img {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+        img.loaded {
+            opacity: 1;
+        }
+        
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gold);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #backToTop:hover {
+            background: var(--dark-brown);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Carousel Loading Spinner */
+        .carousel-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(196, 169, 98, 0.2);
+            border-top-color: var(--primary-gold);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            z-index: 10;
+        }
+        .carousel-spinner.hidden {
+            display: none;
+        }
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 7%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            padding: 0.8rem 7%;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-logo h2 {
+            color: var(--dark-brown);
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+        }
+        
+        .nav-logo span {
+            color: var(--primary-gold);
+        }
+        
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--primary-gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            background: transparent;
+            border: none;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+        
+        .hamburger .bar {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text-dark);
+            position: relative;
+            transition: transform .25s ease, opacity .2s ease;
+        }
+        
+        .hamburger .bar::before,
+        .hamburger .bar::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: transform .25s ease;
+        }
+        
+        .hamburger .bar::before { top: -6px; }
+        .hamburger .bar::after { top: 6px; }
+        
+        .nav-menu.mobile-hidden { display: none; }
+        .nav-menu.mobile-open {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: fixed;
+            top: 72px;
+            right: 6%;
+            background: var(--white);
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            z-index: 1200;
+        }
+        
+        .hamburger.active .bar { transform: rotate(45deg); }
+        .hamburger.active .bar::before {
+            transform: rotate(90deg) translateX(0);
+            top: 0;
+        }
+        .hamburger.active .bar::after { opacity: 0; }
+        
+        /* Main Content */
+        .booking-hero {
+            padding: 140px 7% 60px;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            text-align: center;
+        }
+        
+        .booking-hero h1 {
+            font-size: 3.5rem;
+            color: var(--dark-brown);
+            margin-bottom: 1rem;
+        }
+        
+        .booking-hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Promotion Banner */
+        .promotion-banner {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #d4b772 100%);
+            color: var(--white);
+            padding: 2rem 7%;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(196, 169, 98, 0.3);
+        }
+        
+        .promotion-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .promotion-banner p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .promotion-banner .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        
+        .promotion-banner .details {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        /* Booking Form Section */
+        .booking-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 7%;
+        }
+        
+        .booking-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .form-section h3 {
+            font-size: 1.5rem;
+            color: var(--dark-brown);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-light);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        /* Room Options */
+        .room-options {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .room-option {
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .room-option:hover {
+            border-color: var(--primary-gold);
+            background: var(--cream);
+        }
+        
+        .room-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .room-option input[type="radio"]:checked + .room-content {
+            border-left: 4px solid var(--primary-gold);
+            padding-left: 1rem;
+        }
+        
+        .room-option input[type="radio"]:checked ~ .checkmark {
+            opacity: 1;
+        }
+        
+        .room-content {
+            transition: all 0.3s;
+        }
+        
+        .room-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-brown);
+            margin-bottom: 0.3rem;
+        }
+        
+        .room-details {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .room-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-top: 0.5rem;
+        }
+        
+        .checkmark {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            width: 24px;
+            height: 24px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .checkmark::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--white);
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        /* Promotion Option */
+        .promotion-option {
+            background: linear-gradient(135deg, rgba(196, 169, 98, 0.1) 0%, rgba(212, 183, 114, 0.1) 100%);
+            border: 3px solid var(--primary-gold);
+        }
+        
+        .promotion-badge {
+            display: inline-block;
+            background: var(--deep-red);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary-gold);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 2rem;
+        }
+        
+        .submit-btn:hover {
+            background: var(--dark-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--cream);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+        
+        .info-box h4 {
+            color: var(--dark-brown);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-box li {
+            padding: 0.3rem 0;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+        
+        .info-box li::before {
+            content: "→";
+            color: var(--primary-gold);
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--cream);
+            padding: 5rem 7% 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .footer-brand img {
+            height: 80px;
+            width: auto;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-brand p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2rem;
+            color: var(--dark-brown);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a.telegram {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        
+        .footer-column a.telegram svg {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 18px;
+            fill: currentColor;
+        }
+        
+        .footer-column a.telegram:hover {
+            color: var(--primary-gold);
+        }
+        
+        .footer-column a.facebook {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        
+        .footer-column a.facebook svg {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 18px;
+            fill: currentColor;
+        }
+        
+        .footer-column a.facebook:hover {
+            color: #1877F2;
+        }
+        
+        .footer-column a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 860px) {
+            .nav-menu { display: none; }
+            .hamburger { display: flex; }
+        }
+        
+        @media (max-width: 768px) {
+            .booking-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .booking-form {
+                padding: 2rem 1.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .promotion-banner h2 {
+                font-size: 1.5rem;
+            }
+            
+            .promotion-banner .price {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>MAMA <span>SA</span></h2>
+            </div>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+                <span class="bar"></span>
+            </button>
+            <ul id="site-menu" class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#rooms">Accommodations</a></li>
+                <li><a href="index.html#restaurant">Restaurant</a></li>
+                <li><a href="restaurant.html">Dining</a></li>
+                <li><a href="booking.html" style="background: var(--primary-gold); color: var(--white); padding: 0.6rem 1.5rem; border-radius: 4px;">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="booking-hero">
+        <h1>Book Your Stay</h1>
+        <p>Reserve your room at Mama Sa and experience authentic Cambodian hospitality in Kampot</p>
+    </section>
+
+    <!-- Promotion Banner -->
+    <section class="promotion-banner">
+        <h2>🎉 Special Promotion Package</h2>
+        <p><strong>BBQ Rooftop Experience + Accommodation</strong></p>
+        <div class="price">$30</div>
+        <div class="details">
+            ✓ 1 Night Stay in 1-Bed Room with AC<br>
+            ✓ Table for 2 at our Rooftop Restaurant<br>
+            ✓ BBQ at Your Table (Fish or Meat Set)<br>
+            ✓ Drinks Included<br>
+            <em>Save $15 with this package!</em>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <div class="booking-container">
+        <form class="booking-form" action="https://formsubmit.co/info@mamasa.site" method="POST">
+            <!-- Hidden fields for FormSubmit configuration -->
+            <input type="hidden" name="_subject" value="New Booking Request - Mama Sa Hotel">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <!-- Guest Information -->
+            <div class="form-section">
+                <h3>Guest Information</h3>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Phone / Telegram / WhatsApp *</label>
+                    <input type="text" id="contact" name="contact" required placeholder="+855 12 345 678">
+                </div>
+            </div>
+
+            <!-- Booking Details -->
+            <div class="form-section">
+                <h3>Booking Details</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date *</label>
+                        <input type="date" id="checkin" name="checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-out Date *</label>
+                        <input type="date" id="checkout" name="checkout" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Selection -->
+            <div class="form-section">
+                <h3>Select Your Room</h3>
+                <div class="room-options">
+                    <!-- Promotion Package -->
+                    <label class="room-option promotion-option">
+                        <input type="radio" name="room_type" value="Promotion: 1-Bed + AC + BBQ Dinner ($30)" required>
+                        <div class="room-content">
+                            <span class="promotion-badge">SPECIAL OFFER</span>
+                            <div class="room-title">BBQ Rooftop Package</div>
+                            <div class="room-details">1-Bed Room + Air Conditioning + Table for 2 + BBQ Set + Drinks</div>
+                            <div class="room-price">$30 / night</div>
+                        </div>
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <!-- Standard 1-Bed No AC -->
+                    <label class="room-option">
+                        <input type="radio" name="room_type" value="1-Bed Room (No AC) - $15/night">
+                        <div class="room-content">
+                            <div class="room-title">1-Bed Room (Fan Only)</div>
+                            <div class="room-details">Cozy single bed room with fan</div>
+                            <div class="room-price">$15 / night</div>
+                        </div>
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <!-- Standard 1-Bed With AC -->
+                    <label class="room-option">
+                        <input type="radio" name="room_type" value="1-Bed Room (With AC) - $20/night">
+                        <div class="room-content">
+                            <div class="room-title">1-Bed Room (Air Conditioning)</div>
+                            <div class="room-details">Cozy single bed room with AC</div>
+                            <div class="room-price">$20 / night</div>
+                        </div>
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <!-- 2-Bed No AC -->
+                    <label class="room-option">
+                        <input type="radio" name="room_type" value="2-Bed Room (No AC) - $20/night">
+                        <div class="room-content">
+                            <div class="room-title">2-Bed Room (Fan Only)</div>
+                            <div class="room-details">Spacious room with 2 beds and fan</div>
+                            <div class="room-price">$20 / night</div>
+                        </div>
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <!-- 2-Bed With AC -->
+                    <label class="room-option">
+                        <input type="radio" name="room_type" value="2-Bed Room (With AC) - $25/night">
+                        <div class="room-content">
+                            <div class="room-title">2-Bed Room (Air Conditioning)</div>
+                            <div class="room-details">Spacious room with 2 beds and AC</div>
+                            <div class="room-price">$25 / night</div>
+                        </div>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="form-section">
+                <h3>Special Requests (Optional)</h3>
+                <div class="form-group">
+                    <label for="requests">Any special requirements or questions?</label>
+                    <textarea id="requests" name="special_requests" placeholder="Let us know if you have any special requests..."></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit Booking Request</button>
+
+            <!-- Info Box -->
+            <div class="info-box">
+                <h4>Booking Information</h4>
+                <ul>
+                    <li>Check-in: 2:00 PM | Check-out: 11:00 AM</li>
+                    <li>Minimum stay: 1 night | Maximum stay: Monthly</li>
+                    <li>Payment: Cash or QR code (ABA/ACLEDA) on arrival</li>
+                    <li>Free cancellation up to 24 hours before check-in</li>
+                    <li>We'll contact you via phone/Telegram to confirm availability</li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Mama Sa Logo">
+                <p>
+                    A retreat celebrating authentic Cambodian heritage 
+                    through thoughtful hospitality and cultural preservation.
+                    Opened in Dec/2025 on the fisher island in Kampot, Cambodia.
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Useful links — Kampot</h4>
+                <ul aria-label="Useful Kampot links">
+                    <li><a href="https://kampot-cambodia.com/" target="_blank" rel="noopener noreferrer">Kampot - your Kampot guide</a></li>
+                    <li><a href="https://www.kondomrei.com/" target="_blank" rel="noopener noreferrer">Discover the uncharted trails</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Bokor_National_Park" target="_blank" rel="noopener noreferrer">Bokor National Park</a></li>
+                    <li><a href="https://kampot-cambodia.com/kampot-activities/" target="_blank" rel="noopener noreferrer">Kampot Activities</a></li>
+                    <li><a href="https://www.tourismcambodia.org/" target="_blank" rel="noopener noreferrer">Cambodia Tourism info</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Reviews</h4>
+                <ul aria-label="Review sites">
+                    <li><a href="https://www.google.com/maps/place/Mama+Sa+Hotel+and+Retreat/@10.5746545,104.1722945,17z/data=!4m8!3m7!1s0x310837007f8e7d0f:0xa5e9a3c388247276!8m2!3d10.5746545!4d104.1722945!9m1!1b1!16s%2Fg%2F11xkwlhdzv?entry=ttu" target="_blank" rel="noopener noreferrer">Google Maps Reviews</a></li>
+                    <li><a href="https://www.tripadvisor.com/Profile/MamaSaKampot" target="_blank" rel="noopener noreferrer">TripAdvisor</a></li>
+                    <li><a href="https://www.facebook.com/mamasahotel/reviews" target="_blank" rel="noopener noreferrer">Facebook Reviews</a></li>
+                    <li><a href="https://www.booking.com/" target="_blank" rel="noopener noreferrer">Booking.com</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Mama Sa. Designed by <a href="https://web-technics.services/" target="_blank" rel="noopener noreferrer">Web-technics</a> with respect for Cambodian heritage.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle with enhanced functionality
+        (function(){
+            const btn = document.querySelector('#navbar .hamburger');
+            const menu = document.getElementById('site-menu');
+            if(!btn || !menu) return;
+            
+            btn.addEventListener('click', function(){
+                const open = btn.classList.toggle('active');
+                menu.classList.toggle('mobile-open');
+                menu.classList.toggle('mobile-hidden');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            
+            // Close when a link is clicked
+            menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+                if(menu.classList.contains('mobile-open')){
+                    btn.classList.remove('active');
+                    menu.classList.remove('mobile-open');
+                    menu.classList.add('mobile-hidden');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            }));
+            
+            // Close when clicking outside
+            document.addEventListener('click', function(e){
+                if(!menu.classList.contains('mobile-open')) return;
+                if(e.target === btn || btn.contains(e.target) || menu.contains(e.target)) return;
+                btn.classList.remove('active');
+                menu.classList.remove('mobile-open');
+                menu.classList.add('mobile-hidden');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        })();
+
+        // Back to Top Button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.id = 'backToTop';
+        backToTopBtn.innerHTML = '↑';
+        backToTopBtn.setAttribute('aria-label', 'Back to top');
+        document.body.appendChild(backToTopBtn);
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Image Fade-In on Load
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.complete) {
+                    img.classList.add('loaded');
+                } else {
+                    img.addEventListener('load', function() {
+                        this.classList.add('loaded');
+                    });
+                }
+            });
+        });
+
+        // Set minimum date to today for check-in
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin').setAttribute('min', today);
+        
+        // Update checkout min date when checkin changes
+        document.getElementById('checkin').addEventListener('change', function() {
+            const checkinDate = new Date(this.value);
+            checkinDate.setDate(checkinDate.getDate() + 1);
+            const minCheckout = checkinDate.toISOString().split('T')[0];
+            document.getElementById('checkout').setAttribute('min', minCheckout);
+        });
+
+        // Form validation
+        document.querySelector('.booking-form').addEventListener('submit', function(e) {
+            const checkin = new Date(document.getElementById('checkin').value);
+            const checkout = new Date(document.getElementById('checkout').value);
+            
+            if (checkout <= checkin) {
+                e.preventDefault();
+                alert('Check-out date must be after check-in date.');
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -665,6 +665,24 @@
             border: 1px solid #ebc5c5;
         }
 
+        .form-status {
+            padding: 0.85rem 1rem;
+            border-radius: 6px;
+            font-size: 0.92rem;
+        }
+
+        .form-status.success {
+            background: #edf7ef;
+            color: #20613b;
+            border: 1px solid #bfd8c5;
+        }
+
+        .form-status.error {
+            background: #fbefef;
+            color: #8b2c2c;
+            border: 1px solid #ebc5c5;
+        }
+
         .helper-text {
             margin-top: 0.55rem;
             color: var(--text-light);
@@ -1144,6 +1162,7 @@
                 </div>
 
                 <button type="submit" class="submit-btn">Send booking request</button>
+                <div id="offerFormStatus" class="form-status" style="display:none; margin-top:1rem;"></div>
 
                 <div class="info-box">
                     <h4>Booking information</h4>
@@ -1511,6 +1530,8 @@
         form.addEventListener('submit', (event) => {
             const selectedOffer = getSelectedOfferInput();
             const nights = getNightCount();
+            const submitBtn = form.querySelector('.submit-btn');
+            const formStatus = document.getElementById('offerFormStatus');
 
             if (!selectedOffer) {
                 event.preventDefault();
@@ -1534,6 +1555,10 @@
                 setCodeStatus('The romantic package is fixed for 2 guests.', 'error');
                 return;
             }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formStatus.style.display = 'none';
         });
 
         (function() {
@@ -1573,40 +1598,8 @@
             });
         })();
 
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const backToTop = document.getElementById('backToTop');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-
-        document.getElementById('backToTop').addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('img').forEach((img) => {
-                if (img.complete) {
-                    img.classList.add('loaded');
-                } else {
-                    img.addEventListener('load', function() {
-                        this.classList.add('loaded');
-                    });
-                }
-            });
-
-            setMinDates();
-            updateSummary();
-        });
+        setMinDates();
+        updateSummary();
     </script>
 </body>
 </html>

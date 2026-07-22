@@ -542,6 +542,24 @@
         .submit-btn:active {
             transform: translateY(0);
         }
+
+        .form-status {
+            padding: 0.85rem 1rem;
+            border-radius: 6px;
+            font-size: 0.92rem;
+        }
+
+        .form-status.success {
+            background: #edf7ef;
+            color: #20613b;
+            border: 1px solid #bfd8c5;
+        }
+
+        .form-status.error {
+            background: #fbefef;
+            color: #8b2c2c;
+            border: 1px solid #ebc5c5;
+        }
         
         /* Info Box */
         .info-box {
@@ -842,6 +860,7 @@
 
             <!-- Submit Button -->
             <button type="submit" class="submit-btn">Submit Booking Request</button>
+            <div id="bookingFormStatus" class="form-status" style="display:none; margin-top:1rem;"></div>
 
             <!-- Info Box -->
             <div class="info-box">
@@ -984,16 +1003,24 @@
             document.getElementById('checkout').setAttribute('min', minCheckout);
         });
 
-        // Form validation
+        // Form validation with native form submit to Formspark
         document.querySelector('.booking-form').addEventListener('submit', function(e) {
             const checkin = new Date(document.getElementById('checkin').value);
             const checkout = new Date(document.getElementById('checkout').value);
-            
+            const submitBtn = this.querySelector('.submit-btn');
+            const status = document.getElementById('bookingFormStatus');
+
             if (checkout <= checkin) {
                 e.preventDefault();
-                alert('Check-out date must be after check-in date.');
-                return false;
+                status.textContent = 'Check-out date must be after check-in date.';
+                status.className = 'form-status error';
+                status.style.display = 'block';
+                return;
             }
+
+            status.style.display = 'none';
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
         });
     </script>
 </body>

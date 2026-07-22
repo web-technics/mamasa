@@ -2016,42 +2016,18 @@ Our stunning rooftop restaurant is an unforgettable dining experience. Get ready
 
         addSpinnerToCarousel('roomsCarousel');
 
-        // Contact Form Handler
+        // Contact Form: native submit to Formspark
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
+            contactForm.addEventListener('submit', function() {
                 const btn = this.querySelector('.submit-btn');
                 const status = document.getElementById('formStatus');
+                if (status) {
+                    status.style.display = 'none';
+                }
                 btn.disabled = true;
                 btn.textContent = 'Sending...';
-                
-                // Formspree will handle the submission
-                fetch(this.action, {
-                    method: 'POST',
-                    body: new FormData(this),
-                    headers: { 'Accept': 'application/json' }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        status.textContent = '✓ Thank you! Your message has been sent. We\'ll respond soon.';
-                        status.className = 'form-status success';
-                        status.style.display = 'block';
-                        contactForm.reset();
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                })
-                .catch(error => {
-                    status.textContent = '✗ Error sending message. Please try email instead: info@mamasa.site';
-                    status.className = 'form-status error';
-                    status.style.display = 'block';
-                })
-                .finally(() => {
-                    btn.disabled = false;
-                    btn.textContent = 'Send Message';
-                });
-                });
+            });
         }
     </script>
 
